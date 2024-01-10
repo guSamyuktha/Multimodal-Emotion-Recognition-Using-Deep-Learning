@@ -1,0 +1,101 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5 text-center">
+            <h1 class="display-5 fw-bold">About this project</h1>
+            <p class="fs-5 text-break">This project was developed by our team of four students namely Deepika, Monika, Samyuktha and Sindhuja from 
+                A.V.C College of Engineering for our final year project.
+                
+            </p>
+            <p class="fs-5 text-break">The goal of our topic was to develop a microservice that detects the
+                current emotion of a user based on his voice and facial expression. A camera-based application for
+                multimodal emotion detection from voice and facial expression shall be the presented at the end.
+            <p class="fs-5 text-break"> We found a way to analyze an audio and video stream in Python, find
+                suitable features for the emotion recognition and train neural networks detecting emotion. Research has
+                shown that convolutional neural networks (CNNs) achieve the best accuracies and
+                performances for both streams.
+                Still, due to the very different input forms, we decided to train two separate models whose predictions
+                are then combined.
+
+        </div>
+    </div>
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5 text-left">
+            <h1 class="display-5 fw-bold">Audio Model</h1>
+            <p class="fs-5 text-break">Python and Jupyter Notebook was used for training the model. The dataset consists
+                of 8 x 652 audio files
+                which are recorded by professional voice actors. 4 Emotions of the 8 provided are taken
+                into account for training the model.</p>
+            <p class="fs-5 text-break"> The validated accuracy was 91% with a validated loss of 0.4.
+            </p>
+
+            <img src="../static/images_about/audio_model_acc.png" alt="accuracy">
+
+            <br><br><br>
+
+            <p class="fs-5 text-break"> The confusion matrix displays the binary classification.
+            </p>
+
+            <img src="../static/images_about/audio_cm.png" alt="confusionmatrix">
+        </div>
+    </div>
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5 text-left">
+            <h1 class="display-5 fw-bold">Video Model</h1>
+            <p class="fs-5 text-break">
+                Python and Jupyter Notebook was used for training the model. The dataset consists of 981 48 x 48 images
+                which are face-frontal and are extracted from video sequences. 4 Emotions of the 7 provided are taken
+                into account for training the model.
+            </p>
+            <br>
+            <p class="fs-5 text-break"> Content of model:
+            </p>
+            <img src="../static/images_about/trained_model.png" alt="trained model">
+
+            <br><br><br>
+
+            <p class="fs-5 text-break"> The validated accuracy was 97% with a validated loss of 0.11.
+            </p>
+
+            <img src="../static/images_about/video_model_acc.png" alt="accuracy">
+            <img src="../static/images_about/video_model_loss.png" alt="loss">
+
+            <br><br><br>
+
+            <p class="fs-5 text-break"> The confusion matrix displays the binary classification.
+            </p>
+
+            <img src="../static/images_about/video_cm.png" alt="confusionmatrix">
+        </div>
+    </div>
+
+    <div class="p-5 mb-4 bg-light rounded-5">
+        <div class="container-fluid py-7">
+            <h1 class="display-6 fw-bold">licenses and citations</h1>
+            <p class="fs-6 text-break">The project is licensed under the MIT License, Copyright (c) 2022 Chair of
+                Technical Information Systems, Friedrich-Alexander-University. The data that we used to train our models
+                is free to download on Kaggle and the
+                websites of their respective research institutes.</p>
+            <p class="fs-6 text-break">Audio Data:</p>
+            <ul>
+                <li>The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS),
+                    released under a Creative Commons Attribution license: <a
+                            href="https://zenodo.org/record/1188976">source</a></li>
+               
+            </ul>
+            <p class="fs-6 text-break">Video Data:</p>
+            <ul>
+                <li> FER2013
+                </li>
+            </ul>
+            <div>
+                <p>All emojis designed by <a href="https://openmoji.org/">OpenMoji</a> – the open-source emoji and icon
+                    project. License: <a
+                            href="https://creativecommons.org/licenses/by-sa/4.0/#">CC BY-SA 4.0</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
